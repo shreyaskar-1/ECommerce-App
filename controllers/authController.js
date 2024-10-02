@@ -1,5 +1,6 @@
 import userModel from "../models/userModel.js"
 import { hashPassword } from './../helpers/authHelper.js'
+import JWT from "jsonwebtoken"
 
 
 export const registerController = async (req, res) => {
@@ -34,7 +35,7 @@ export const registerController = async (req, res) => {
         // Register User
         const hashedPassword = await hashPassword(password)
         // save password
-        const user = new userModel({
+        const user = await new userModel({
             name,
             email,
             password: hashedPassword,
@@ -57,3 +58,10 @@ export const registerController = async (req, res) => {
     }
 }
 
+// POST Login
+export const registerController = async (req, res) => {
+    try {
+    }catch(error){
+
+    }
+}
