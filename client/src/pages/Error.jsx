@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Typography } from '@mui/material';
 import Layout from '../components/Layout/Layout';
-import CustomButton from '../components/Button';
+import Button from '../components/Button';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate hook
 
 const Error = () => {
@@ -29,11 +29,11 @@ const Error = () => {
             Oops! We can&apos;t seem to find the page you&apos;re looking for.
           </Typography>
 
-          {/* Custom Button */}
+          {/*  Button */}
         </Container>
 
         <div className="pt-[1.7vw]">
-          <CustomButton
+          <Button
             text="Return Home"
             onClick={handleHomeRedirect}
           />
