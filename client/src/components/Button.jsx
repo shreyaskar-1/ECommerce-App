@@ -55,7 +55,6 @@ const BlobButton = ({
         }
 
         .buttons {
-          margin-top: 5vh;
           text-align: center;
           border-radius: 3vw;
         }
@@ -64,7 +63,6 @@ const BlobButton = ({
           z-index: 1;
           position: relative;
           padding: 2vw 4vw;
-          margin-bottom: 3vh;
           text-align: center;
           text-transform: uppercase;
           font-size: 1.2vw;
@@ -87,7 +85,7 @@ const BlobButton = ({
         /* Adjustments for tablet screens */
         @media (max-width: 1023px) and (min-width: 768px) {
           .blob-btn {
-            padding: 3vw 5vw;
+            padding: 1vw 1vw;
             font-size: 1.8vw;
           }
         }
@@ -95,9 +93,9 @@ const BlobButton = ({
         /* Adjustments for mobile screens */
         @media (max-width: 767px) {
           .blob-btn {
-            padding: 5vw 8vw;
-            font-size: 3.5vw;
-            border-radius: 5vw;
+            padding: 2vw 3vw;
+            font-size: 2.6vw;
+            border-radius: 3vw;
           }
 
           .blob-btn__blob {

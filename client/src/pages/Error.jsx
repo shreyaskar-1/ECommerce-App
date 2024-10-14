@@ -1,4 +1,3 @@
-import React from 'react';
 import { Container, Typography } from '@mui/material';
 import Layout from '../components/Layout/Layout';
 import Button from '../components/Button';
@@ -12,7 +11,9 @@ const Error = () => {
   };
 
   return (
-    <Layout>
+    <Layout
+    title={'Page Not Found'}
+    >
       <div className="flex flex-col items-center justify-center min-h-screen bg-white">
         {/* Image Section */}
         <div>

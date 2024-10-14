@@ -10,7 +10,9 @@ const Contact = () => {
   }
 
   return (
-    <Layout>
+    <Layout
+    title={'Contact Us'}
+    >
       <div className="flex flex-col items-center justify-center bg-white py-[3vw]">
         
         {/* Business Description Section */}

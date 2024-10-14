@@ -1,9 +1,10 @@
-import React from 'react'
 import Layout from '../components/Layout/Layout'
 
 const HomePage = () => {
     return (
-        <Layout>
+        <Layout 
+        title={'Shop Now'}
+        >
             <div>HomePage</div>
         </Layout>
 

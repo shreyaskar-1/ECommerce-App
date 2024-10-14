@@ -1,95 +1,110 @@
-import React from 'react';
 import Layout from '../components/Layout/Layout';
-import { Box, Typography, Grid, Paper, Divider } from '@mui/material';
-import Button from '../components/Button'; // Import your  button
+import Button from '../components/Button';
+
+// Reusable Card Component
+const Card = ({ title, description }) => {
+  return (
+    <div className="flex flex-col items-center">
+      <div className="w-full h-full p-2 text-center bg-[#ede8d0] rounded-lg shadow-md flex flex-col justify-cente items-centerr">
+        <h6 className="text-[#6F4E37] font-semibold text-lg md:text-[1.5vw] h-[35%]">{title}</h6>
+        <p className="text-sm md:text-[1vw] h-[65%]">{description}</p>
+      </div>
+    </div>
+  );
+};
 
 const About = () => {
+  const coreValues = [
+    {
+      title: 'Quality',
+      description: 'We prioritize quality in every product we offer to ensure customer satisfaction.',
+    },
+    {
+      title: 'Customer Focus',
+      description: 'Our customers are at the heart of everything we do; we listen and adapt to your needs.',
+    },
+    {
+      title: 'Innovation',
+      description: 'We embrace creativity and strive for innovative solutions to enhance your shopping experience.',
+    },
+    {
+      title: 'Sustainability',
+      description: 'We are committed to eco-friendly practices, ensuring our products and processes are sustainable for the environment.',
+    }
+  ];
+
   return (
-    <Layout>
-      <Box className="p-8">
+    <Layout 
+    title={'About'}
+    >
+      <div className="p-8">
         {/* Hero Section */}
-        <Box className="flex flex-col items-center mb-8">
-          <Typography variant="h2" className="text-[#6F4E37] mb-4 text-center font-semibold">
+        <div className="flex flex-col items-center pb-[2vw] gap-2">
+          <h2 className="text-[#6F4E37] text-center font-semibold text-[3vh] md:text-[3vw]">
             Welcome to Shrey Store
-          </Typography>
-          <Typography variant="h5" className="text-center mb-4 max-w-2xl">
+          </h2>
+          <h5 className="text-center text-lg md:text-[1.9vw]">
             Discover a diverse range of quality products curated to enhance your lifestyle.
-          </Typography>
+          </h5>
+          <div className='pt-[1vw]'>
           <Button
-            name="Explore Our Products"
-            onClick={() => window.location.href = '/shop'} // Link to your shop page
+            text="Explore Our Products"
+            onClick={() => (window.location.href = '/shop')}
           />
-        </Box>
+          </div>
+        </div>
 
         {/* Our Story Section */}
-        <Typography variant="h4" className="text-center text-[#6F4E37] mb-4 font-semibold">
+        <h4 className="text-center text-[#6F4E37] font-semibold text-xl md:text-[2.5vw]">
           Our Story
-        </Typography>
-        <Grid container spacing={4}>
-          <Grid item xs={12} md={6}>
+        </h4>
+        <div className="flex flex-col md:flex-row items-center justify-center gap-2">
+          <div className="w-full h-full md:w-[40%]">
             <img
               src="https://img.freepik.com/free-vector/ecommerce-concept-illustration_114360-1171.jpg"
               alt="Our Story"
               className="rounded-xl object-cover w-full h-auto"
             />
-          </Grid>
-          <Grid item xs={12} md={6}>
-              <Typography variant="body1" className="text-[#6F4E37]">
-                Founded in 2024, Shrey Store is born from a passion for curating unique products that resonate with our customers. Our journey began with a simple idea: to offer high-quality items that enhance your everyday life.
-              </Typography>
-              <Typography variant="body1" className="mt-2 text-[#6F4E37]">
-                With a commitment to excellence and customer satisfaction, we have grown to become a trusted source for quality products. Explore our extensive collection and find what you need to elevate your lifestyle.
-              </Typography>
-          </Grid>
-        </Grid>
+          </div>
+          <div className="flex flex-col justify-center items-center text-justify text-[3vw] md:text-[2vw] w-full md:w-[60%] gap-[2vw]">
+            <p className="text-[#6F4E37]">
+              Founded in 2024, Shrey Store is born from a passion for curating unique products that resonate with our customers. Our journey began with a simple idea: to offer high-quality items that enhance your everyday life.
+            </p>
+            <p className="text-[#6F4E37]">
+              With a commitment to excellence and customer satisfaction, we have grown to become a trusted source for quality products. Explore our extensive collection and find what you need to elevate your lifestyle.
+            </p>
+          </div>
+        </div>
 
-        <Divider className="my-8" />
-
-        {/* Values Section */}
-        <Typography variant="h4" className="text-center text-[#6F4E37] mb-4 font-semibold">
+        {/* Our Core Values Section */}
+        <h4 className="text-center text-[#6F4E37] font-semibold text-xl md:text-[2.5vw] py-4">
           Our Core Values
-        </Typography>
-        <Grid container spacing={4} justifyContent="center">
-          <Grid item xs={12} sm={4} className="flex flex-col items-center">
-            <Paper elevation={2} className="p-4 text-center bg-[#ede8d0] shadow-md">
-              <Typography variant="h6" className="text-[#6F4E37]">Quality</Typography>
-              <Typography variant="body2">
-                We prioritize quality in every product we offer to ensure customer satisfaction.
-              </Typography>
-            </Paper>
-          </Grid>
-          <Grid item xs={12} sm={4} className="flex flex-col items-center">
-            <Paper elevation={2} className="p-4 text-center bg-[#ede8d0] shadow-md">
-              <Typography variant="h6" className="text-[#6F4E37]">Customer Focus</Typography>
-              <Typography variant="body2">
-                Our customers are at the heart of everything we do; we listen and adapt to your needs.
-              </Typography>
-            </Paper>
-          </Grid>
-          <Grid item xs={12} sm={4} className="flex flex-col items-center">
-            <Paper elevation={2} className="p-4 text-center bg-[#ede8d0] shadow-md">
-              <Typography variant="h6" className="text-[#6F4E37]">Innovation</Typography>
-              <Typography variant="body2">
-                We embrace creativity and strive for innovative solutions to enhance your shopping experience.
-              </Typography>
-            </Paper>
-          </Grid>
-        </Grid>
-
-        <Divider className="my-8" />
+        </h4>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 justify-center">
+          {coreValues.map((value, index) => (
+            <Card key={index} title={value.title} description={value.description} />
+          ))}
+        </div>
 
         {/* Call to Action */}
-        <Box className="text-center mt-8">
-          <Typography variant="h4" className="mb-4">Join Our Community</Typography>
-          <Typography variant="body1" className="mb-4 max-w-2xl mx-auto">
-            Be part of the Shrey Store family! Sign up for our newsletter to receive the latest updates and exclusive offers straight to your inbox.
-          </Typography>
-          <Button
-            name="Subscribe Now"
-            onClick={() => window.location.href = '/subscribe'} // Link to your subscription page
-          />
-        </Box>
-      </Box>
+        <div className="flex flex-col justify-center items-center py-[2vw] gap-4 text-center">
+          <h1 className="text-xl md:text-[2.3vw] text-[#6F4E37] font-semibold">
+            Join Our Community
+          </h1>
+          <div className="text-center text-[4vw] md:text-[2vw] leading-tight">
+            <p>Be part of the Shrey Store family!</p>
+            <p>
+              Sign up for our newsletter to receive the latest updates and exclusive offers straight to your inbox.
+            </p>
+          </div>
+          <div>
+            <Button
+              text="Subscribe Now"
+              onClick={() => (window.location.href = '/subscribe')}
+            />
+          </div>
+        </div>
+      </div>
     </Layout>
   );
 };
