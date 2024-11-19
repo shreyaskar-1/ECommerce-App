@@ -3,9 +3,9 @@ import { Grid, Box } from '@mui/material';
 import Form from '../../components/Form';
 
 const Login = () => {
-  const handleLogin = () => {
+  const handleLogin = (e) => {
+    e.preventDefault()
     console.log('Login API call simulation');
-    // Simulate an API call here
   };
 
   return (

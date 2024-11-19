@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { TextField, Grid, Box, Snackbar, Alert } from '@mui/material';
 import CustomButton from './Button';
 
@@ -29,27 +29,26 @@ const Form = ({ isRegister, handleSubmit }) => {
     return emailRegex.test(email);
   };
 
-  // Form submit handler with validation
-  const handleFormSubmit = () => {
+  const handleFormSubmit = (e) => {
+    e.preventDefault(); // Prevent the default form behavior
+  
     if (isRegister && (!name || !phone || !address)) {
       setError('All fields are required for registration');
       return;
     }
-
+  
     if (!email || !validateEmail(email)) {
       setError('Please enter a valid email address');
       return;
     }
-
+  
     if (!password || password.length < 6) {
       setError('Password must be at least 6 characters long');
       return;
     }
-
-    // Clear error if all validations pass
-    setError('');
-
-    // Prepare the data to be sent to the server
+  
+    setError(''); 
+  
     const userData = {
       name,
       phone,
@@ -57,9 +56,9 @@ const Form = ({ isRegister, handleSubmit }) => {
       email,
       password,
     };
-
-    // Call the handleSubmit function with userData
-    handleSubmit(userData);
+  
+    handleSubmit(e, userData);
+  };
 
     setMessage(isRegister ? 'Registration Successful!' : 'Login Successful!');
     setOpen(true);
